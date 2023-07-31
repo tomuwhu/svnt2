@@ -7,3 +7,9 @@ input {
     padding: 6px;
     margin: 6px;
 }
+
+h1 {
+    font-size: 22px;
+    color: rgb(68, 45, 36);
+    text-shadow: 1px 1px 3px rgb(45, 21, 21);
+}
