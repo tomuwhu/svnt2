@@ -1,10 +1,9 @@
 <script lang="ts">
-	var i1: string = 'jézuska';
-	var i2: string = 'géppuska';
-	import levenshtein from 'damerau-levenshtein';
-	$: sim = levenshtein(i1, i2).similarity.toFixed(2);
+  var i1: string = 'jézuska';
+  var i2: string = 'géppuska';
+  import levenshtein from 'damerau-levenshtein';
+  $: sim = levenshtein(i1, i2).similarity.toFixed(2);
 </script>
-
 
 <h1>Két szöveg hasonlósága</h1>
 <input type="text" bind:value={i1} />
