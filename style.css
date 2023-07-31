@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+input {
+    padding: 6px;
+    margin: 6px;
+}
