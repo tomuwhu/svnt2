@@ -13,8 +13,8 @@
 <div>Hasonlóság: {sim}</div>
 
 <style lang="scss">
-  $resc: rgb(55, 71, 109);
+	$resc: rgb(55, 71, 109);
 	div {
-    color: $resc;
+		color: $resc;
 	}
 </style>
