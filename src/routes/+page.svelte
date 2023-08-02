@@ -6,9 +6,15 @@
 </script>
 
 <h1>Két szöveg hasonlósága</h1>
-<input type="text" bind:value={i1} />
+<input 
+  type="text" 
+  bind:value={i1}
+  placeholder="egyik szöveg" />
 <br />
-<input type="text" bind:value={i2} />
+<input 
+  type="text" 
+  bind:value={i2} 
+  placeholder="másik szöveg"/>
 <br />
 <div>Hasonlóság: {sim}</div>
 
