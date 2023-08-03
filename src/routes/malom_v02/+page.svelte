@@ -35,13 +35,9 @@ function handleDragDrop(e) {
   var bid = e
     .dataTransfer
     .getData("id")
-  if (d[cid].b != "white") {
-    objects[bid].el.style.visibility = "visible"
-    objects[bid].el.style.backgroundColor = objects[bid].color
-  } else {
-    d[cid].b = objects[bid].color
-    objects[bid].el.style.visibility = "hidden"
-  }
+  d[cid].b = objects[bid].color
+  objects[bid].el.style.display = "none"
+  circles[cid].setAttribute("ondragover", "return true")
   //console.log(`${bid} => ${cid}`)
 }
 
@@ -53,7 +49,7 @@ function handleDragStart(e) {
 }
 
 function handleDragEnd(e) {
-  //e.target.style.visibility = "hidden"
+  e.target.style.backgroundColor = objects[e.target.id.slice(1)].color
 }
 </script>
 
