@@ -1,23 +1,23 @@
 <script>
   import Malom from './Malom.svelte'
   var render = false
-  var button = "Start"
+  var counter = 1
   const start = () => {
     render = false
     setTimeout(() => {
       render = true
-      button = "Új játszma"
+      counter++
     }, 100)
   }
 </script>
 
 {#if render==true}
-<Malom ad="Malom - új játszma"/>
+<Malom ad="Malom - {counter}. játszma"/>
 {:else}
-<Malom ad="Malom"/>
+<Malom />
 {/if}
 <br><br>
-<button on:click={start}>{button}</button>
+<button on:click={start}>Új játszma</button>
 
 <style>
   button {
