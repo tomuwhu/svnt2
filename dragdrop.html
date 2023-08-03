@@ -7,18 +7,22 @@
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width" />
   
-		<link href="./_app/immutable/assets/2.33f57cad.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/3.46d86b16.css" rel="stylesheet">
 		<link rel="modulepreload" href="./_app/immutable/entry/start.c9b22163.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.e108d1fd.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.70b2298f.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/app.4ea08f99.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.d91548a7.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.eb443d2a.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.21b57f42.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.2521da12.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js">
 </head>
 
 <body data-sveltekit-preload-data="hover">
-  <div style="display: contents">  <h1 data-svelte-h="svelte-1kp9x55">Két szöveg hasonlósága</h1> <input type="text" placeholder="egyik szöveg" value=""> <br> <input type="text" placeholder="másik szöveg" value=""> <br> <div class="svelte-10xj5zy">Hasonlóság: 1.00</div> 
+  <div style="display: contents">  <h2 id="app_status">Drag status: </h2> <h1 data-svelte-h="svelte-1tetqxl">Drop Zone</h1>  <div id="drop_zone" ondragover="return false" class="svelte-ce8rwq"></div>  <div id="1" class="objects svelte-ce8rwq" draggable="true">1. objektum
+  </div><div id="2" class="objects svelte-ce8rwq" draggable="true">2. objektum
+  </div><div id="3" class="objects svelte-ce8rwq" draggable="true">3. objektum
+  </div> 
 			
 			<script>
 				{
@@ -37,7 +41,7 @@
 						import("./_app/immutable/entry/app.4ea08f99.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 2],
+							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null
