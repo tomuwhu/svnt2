@@ -27,9 +27,14 @@ var d = [
   { x: 60,  y: 110, b: "white", nl: [19, 21, 23] },
   { x: 110, y: 110, b: "white", nl: [14, 22] }
 ]
-let objects = Array(18).fill(null).map((_, i) => ({ el: null, color: i < 9 ? "red" : "blue" }))
+Array(9).fill(0).forEach((v, i) => {
+  d.push({x: i*8+28, y: 120, b: "white", nl: []})
+  d.push({x: i*8+28, y: 130, b: "white", nl: []})
+})
+let objects = Array(18).fill(null).map((_, i) => ({ el: null, color: i < 9 ? "red" : "blue", cont: null, contid: null }))
 let circles = Array(24).fill(null).map(() => null)
 var svg
+let movefrom = {id: null, obj: null}
 function SVGToScreen(svgX, svgY) {
   var p = svg.createSVGPoint()
   p.x = svgX
@@ -47,11 +52,16 @@ function handleDragDrop(e) {
   var tl = SVGToScreen(d[cid].x, d[cid].y)
   objects[bid].el.style.top = `${tl.y-15}px`
   objects[bid].el.style.left = `${tl.x-15}px`
+  objects[bid].cont=circles[cid]
+  objects[bid].contid=cid
   circles[cid].setAttribute("ondragover", "return true")
+  if (movefrom.id) movefrom.obj.setAttribute("ondragover", "return false")
 }
 
 function handleDragStart(e) {
   var id = e.target.getAttribute('id').slice(1)
+  if (movefrom.obj = objects[id].cont) movefrom.id = id
+  else movefrom.id = null
   e .dataTransfer
     .setData("id", id)
   e.target.style.backgroundColor = objects[id].color == "red" ? "#f88": "#88f"
@@ -63,7 +73,7 @@ function handleDragEnd(e) {
 </script>
 
 <h1>Malom</h1>
-<svg id="mt" viewBox="0 0 120 120" bind:this={svg}>
+<svg id="mt" viewBox="0 0 120 140" bind:this={svg}>
   {#each d as p}
     {#each p.nl as l}
       <line x1={d[l].x} y1={d[l].y}
