@@ -1,20 +1,21 @@
 <script>
+// @ts-nocheck
   import Malom from './Malom.svelte'
   var render = false
   var counter = 1
-  const start = () => {
+  var innerWidth = 0
+  $: x = start(innerWidth != 10000 ? "cica" : 3)
+  const start = p => {
     render = false
     setTimeout(() => {
       render = true
-      counter++
-    }, 100)
+      if (p!="cica") counter++
+    })
   }
 </script>
-
+<svelte:window bind:innerWidth />
 {#if render==true}
 <Malom ad="Malom - {counter}. játszma"/>
-{:else}
-<Malom />
 {/if}
 <br><br>
 <button on:click={start}>Új játszma</button>
