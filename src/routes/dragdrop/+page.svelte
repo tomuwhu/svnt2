@@ -10,7 +10,6 @@ function handleDragDrop(e) {
       .dataTransfer
       .getData("id");
   dropped = dropped.concat(element_id);
-  dropped_in = true;
 }
 
 function handleDragStart(e) {
@@ -19,7 +18,7 @@ function handleDragStart(e) {
 }
 
 function handleDragEnd(e) {
-  dropped_in = false;
+
 }
 </script>
 
