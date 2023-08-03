@@ -1,73 +1,33 @@
 <script>
 // @ts-nocheck
-
-let name = 'world';
-
-let drop_zone;
-let objects = [
-  { el: null, id: 1 }, 
-  { el: null, id: 2 }, 
-  { el: null, id: 3 }
-];
+let objects = Array(7).fill(null).map((v,i) => ({ el: null, id: i }))
 
 let dropped = [];
-let status = '';
-
-let dropped_in = '';
-let activeEvent = '';
-let originalX = '';
-let originalY = '';
-
-function handleDragEnter(e) {
-    status = "You are dragging over the " + e
-      .target
-      .getAttribute('id');
-}
-
-function handleDragLeave(e) {
-    status = "You left the " + e
-      .target
-      .getAttribute('id');
-}
 
 function handleDragDrop(e) {
   e.preventDefault();
   var element_id = e
       .dataTransfer
-      .getData("text");
+      .getData("id");
   dropped = dropped.concat(element_id);
   dropped_in = true;
-  status = "You droped " + element_id + " into drop zone";
 }
 
 function handleDragStart(e) {
-  status = "Dragging the element " + e
-    .target
-    .getAttribute('id');
-  e.dataTransfer.dropEffect = "move";
   e.dataTransfer
-    .setData("text", e.target.getAttribute('id'));
+    .setData("id", e.target.getAttribute('id'));
 }
 
 function handleDragEnd(e) {
-  if (dropped_in == false) {
-    status = "You let the " + e
-      .target
-      .getAttribute('id') + " go.";
-  }
   dropped_in = false;
 }
 </script>
 
-<h2 id="app_status">Drag status: {status}</h2>
 <h1>Drop Zone</h1>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div 
-  on:dragenter={handleDragEnter} 
-  on:dragleave={handleDragLeave}  
   on:drop={handleDragDrop} 
-  bind:this={drop_zone}
   id="drop_zone" 
   ondragover="return false">
   {#each objects.filter(v => dropped.includes(`${v.id}`)) as {id}, i}
@@ -76,7 +36,7 @@ function handleDragEnd(e) {
     </div>
   {/each}
 </div>
-
+<br><br><br>
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 {#each objects.filter(v => !dropped.includes(`${v.id}`)) as { id }, i}
   <div 
@@ -101,13 +61,14 @@ function handleDragEnd(e) {
   }
 
   #drop_zone {
-    background-color: #eee;
+    background-color: #e1e7ac;
     border: #999 1px solid ;
+    box-shadow: 1px 1px 4px inset black;
     width: 280px;
-    height: 200px;
-    padding: 18px;
+    height: 230px;
+    padding: 10px;
     font-size: 19px;
-    border-radius: 120px;
+    border-radius: 50px;
   }
   
   .objects {
@@ -116,8 +77,8 @@ function handleDragEnd(e) {
     border: #DFBC6A 1px solid;
     width: 90px;
     height: 20px;
-    margin: 10px;
-    padding: 8px;
+    margin: 7px;
+    padding: 7px;
     font-size: 16px;
     text-align: center;
     box-shadow: 2px 2px 2px #999;
