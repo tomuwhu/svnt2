@@ -27,25 +27,33 @@ var d = [
   { x: 60,  y: 110, b: "white", nl: [19, 21, 23] },
   { x: 110, y: 110, b: "white", nl: [14, 22] }
 ]
-let objects = Array(18).fill(null).map((v,i) => ({ el: null, id: i }))
-
+let objects = Array(18).fill(null).map((_, i) => ({ el: null, color: i < 9 ? "red" : "blue" }))
+let circles = Array(24).fill(null).map(() => null)
 function handleDragDrop(e) {
   e.preventDefault();
-  var id =  e
+  var cid = e.target.id.slice(1)
+  var bid = e
     .dataTransfer
     .getData("id")
-  d[e.target.id.slice(1)].b = id < 9 ? "red": "blue"
+  if (d[cid].b != "white") {
+    objects[bid].el.style.visibility = "visible"
+    objects[bid].el.style.backgroundColor = objects[bid].color
+  } else {
+    d[cid].b = objects[bid].color
+    objects[bid].el.style.visibility = "hidden"
+  }
+  //console.log(`${bid} => ${cid}`)
 }
 
 function handleDragStart(e) {
   var id = e.target.getAttribute('id').slice(1)
   e .dataTransfer
     .setData("id", id)
-  e.target.style.backgroundColor = id < 9 ? "#f88": "#88f"
+  e.target.style.backgroundColor = objects[id].color == "red" ? "#f88": "#88f"
 }
 
 function handleDragEnd(e) {
-  e.target.style.visibility = "hidden"
+  //e.target.style.visibility = "hidden"
 }
 </script>
 
@@ -60,18 +68,21 @@ function handleDragEnd(e) {
   {/each}
   {#each d as p, i}
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <circle on:drop={handleDragDrop} 
-            ondragover="return false"
-            id="c{i}" cx={p.x} cy={p.y} r={r} fill={p.b}
-            stroke="#123432" stroke-width="0.7" />
+    <circle
+      bind:this={circles[i]}
+      on:drop={handleDragDrop} 
+      ondragover="return false"
+      id="c{i}" cx={p.x} cy={p.y} r={r} fill={p.b}
+      class={p.b}
+      stroke="#123432" stroke-width="0.7" />
   {/each}
 </svg>
 <br>
-{#each objects as { id }, i}
+{#each objects as { color }, i}
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
-    id="b{id}"
-    class="objects {id<9 ? `red` : `blue`}" 
+    id="b{i}"
+    class="objects {color}" 
     draggable=true
     bind:this={objects[i].el}
     on:dragstart={handleDragStart}
@@ -91,14 +102,17 @@ function handleDragEnd(e) {
   cursor: move;
   display: inline-block;
   text-align: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
   background-color: blue;
   color: white;
-  margin: 5px;
+  margin: 2px;
 }
 .red {
   background-color: red;
+}
+circle.red {
+  cursor: not-allowed;
 }
 </style>
