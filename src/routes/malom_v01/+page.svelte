@@ -34,12 +34,12 @@ var d = [
     {#each p.nl as l}
       <line x1={d[l].x} y1={d[l].y}
             x2={p.x} y2={p.y}
-            stroke="#123432" stroke-width="0.6"/>
+            stroke="#123432" stroke-width="0.7"/>
     {/each}
   {/each}
   {#each d as p, i}
     <circle id={i} cx={p.x} cy={p.y} r={r} fill="white"
-            stroke="#123432" stroke-width="0.6" />
+            stroke="#123432" stroke-width="0.7" />
   {/each}
 </svg>
 
@@ -51,5 +51,8 @@ var d = [
     border-radius: 6px;
     box-shadow: 1px 1px 4px inset black;
     background-color: LightCyan;
+}
+#mt circle {
+  cursor: pointer;
 }
 </style>
