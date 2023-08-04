@@ -1,5 +1,4 @@
 <script>
-  // @ts-nocheck
   export let ad = "Malom"
   var r = 3.1
   var d = [
@@ -14,9 +13,9 @@
     d.push({x: i*8+28, y: 120, b: "white", nl: []})
     d.push({x: i*8+28, y: 130, b: "white", nl: []})
   })
-  let objects = Array(18).fill(null).map((_, i) => ({ el: null, color: i < 9 ? "red" : "blue", cont: null, contid: null }))
-  let circles = Array(24).fill(null).map(() => null)
-  var svg
+  let objects = Array(18).fill(null).map((_, i) => (
+    { el: null, color: i < 9 ? "red" : "blue", cont: null, contid: null }))
+  let circles = Array(24).fill(null).map(() => null), svg
   let movefrom = {id: null, obj: null}
   function SVGToScreen(svgX, svgY) {
     var p = svg.createSVGPoint()
@@ -24,7 +23,6 @@
     p.y = svgY
     return p.matrixTransform(svg.getScreenCTM());
   }
-  
   function handleDragDrop(e) {
     e.preventDefault();
     var cid = e.target.id.slice(1)
@@ -38,18 +36,19 @@
     objects[bid].cont=circles[cid]
     objects[bid].contid=cid
     circles[cid].setAttribute("ondragover", "return true")
-    if (movefrom.id) movefrom.obj.setAttribute("ondragover", "return false")
+    if (movefrom.id) movefrom
+                      .obj
+                      .setAttribute("ondragover", "return false")
   }
-  
   function handleDragStart(e) {
     var id = e.target.getAttribute('id').slice(1)
     if (movefrom.obj = objects[id].cont) movefrom.id = id
     else movefrom.id = null
     e .dataTransfer
       .setData("id", id)
-    e.target.style.backgroundColor = objects[id].color == "red" ? "#f88": "#88f"
+    e.target.style.backgroundColor = objects[id]
+                                      .color == "red" ? "#f88": "#88f"
   }
-  
   function handleDragEnd(e) {
     e.target.style.backgroundColor = objects[e.target.id.slice(1)].color
   }
@@ -65,7 +64,6 @@
     {/each}
   {/each}
   {#each d as p, i}
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <circle
       bind:this={circles[i]}
       on:drop={handleDragDrop} 
@@ -77,7 +75,6 @@
 </svg>
 <br>
 {#each objects as { color }, i}
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
     id="b{i}"
     class="objects {color}" 
@@ -87,7 +84,7 @@
     on:dragend={handleDragEnd}></div>
 {/each}
 
-<style lang="scss">
+<style>
 #mt {
     margin: auto;
     width: 600px;
