@@ -19,8 +19,7 @@
   let movefrom = {id: null, obj: null}
   function SVGToScreen(svgX, svgY) {
     var p = svg.createSVGPoint()
-    p.x = svgX
-    p.y = svgY
+    p.x = svgX, p.y = svgY
     return p.matrixTransform(svg.getScreenCTM());
   }
   function handleDragDrop(e) {
@@ -36,16 +35,14 @@
     objects[bid].cont=circles[cid]
     objects[bid].contid=cid
     circles[cid].setAttribute("ondragover", "return true")
-    if (movefrom.id) movefrom
-                      .obj
+    if (movefrom.id) movefrom.obj
                       .setAttribute("ondragover", "return false")
   }
   function handleDragStart(e) {
     var id = e.target.getAttribute('id').slice(1)
     if (movefrom.obj = objects[id].cont) movefrom.id = id
     else movefrom.id = null
-    e .dataTransfer
-      .setData("id", id)
+    e.dataTransfer.setData("id", id)
     e.target.style.backgroundColor = objects[id]
                                       .color == "red" ? "#f88": "#88f"
   }
@@ -104,10 +101,6 @@
   color: white;
   margin: 2px;
 }
-.red {
-  background-color: red;
-}
-circle.red {
-  cursor: not-allowed;
-}
+.red { background-color: red; }
+circle.red { cursor: not-allowed; }
 </style>
