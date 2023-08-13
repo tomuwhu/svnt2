@@ -63,6 +63,7 @@
     {/each}
   {/each}
   {#each d as p, i}
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <circle
       bind:this={circles[i]}
       on:drop={handleDragDrop} 
@@ -74,6 +75,7 @@
 </svg>
 <br>
 {#each objects as { color }, i}
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
     id="b{i}"
     class="objects {color}" 
