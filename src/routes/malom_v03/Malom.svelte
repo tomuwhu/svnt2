@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   export let ad = "Malom"
   var r = 3.1
   var d = [
