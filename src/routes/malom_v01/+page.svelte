@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-import Menu from './../Menu.svelte'
+import Menu from '../Menu.svelte'
 var r = 3.1
 var d = [
   [10,10,[1, 9]],[60,10,[0,2,4]],[110,10,[1,14]],[25,25,[4,10]],

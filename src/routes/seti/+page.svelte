@@ -1,7 +1,7 @@
 <script lang="ts">
   var i: number = 0
   setInterval( ()=> i++, 1000)
-  import Menu from './../Menu.svelte'
+  import Menu from '../Menu.svelte'
 </script>
 <title>Időzítő</title>
 <Menu active="6"/>

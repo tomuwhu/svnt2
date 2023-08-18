@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-  import Menu from './../Menu.svelte'
+  import Menu from '../Menu.svelte'
   export let ad = "Malom"
   var r = 3.1
   var d = [

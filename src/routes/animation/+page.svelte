@@ -1,6 +1,6 @@
 <script>
   var x = 40, y = 100
-  import Menu from './../Menu.svelte'
+  import Menu from '../Menu.svelte'
 </script>
 <title>Animáció</title>
 <body>

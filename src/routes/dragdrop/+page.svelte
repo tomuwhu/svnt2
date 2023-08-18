@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-import Menu from './../Menu.svelte'
+import Menu from '../Menu.svelte'
 
 let objects = Array(7).fill(null).map((v,i) => ({ el: null, id: i }))
 
