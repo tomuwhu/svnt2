@@ -1,13 +1,13 @@
 <script>
 	export let active = ""
 	var items = [
-		["/", "Damerau-Levenshtein távolság"],
-		["animation", "Animáció"],
-		["dragdrop", "Drag & Drop"],
-		["malom_v01", "Malom tábla"],
-		["malom_v02", "Malom bábuk mozgatása"],
-		["malom_v03", "Malom teljes"],
-		["seti", "Időzítés"],
+		["./index.html", "Damerau-Levenshtein távolság"],
+		["./animation/", "Animáció"],
+		["./dragdrop/", "Drag & Drop"],
+		["./malom_v01/", "Malom tábla"],
+		["./malom_v02/", "Malom bábuk mozgatása"],
+		["./malom_v03/", "Malom teljes"],
+		["./seti/", "Időzítés"],
 	]
 </script>
 <div>

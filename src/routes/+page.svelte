@@ -1,9 +1,9 @@
 <script lang="ts">
-	var i1: string = '';
-	var i2: string = '';
-	import levenshtein from 'damerau-levenshtein';
-	$: sim = levenshtein(i1, i2).similarity*100;
-	import Menu from './Menu.svelte'
+  var i1: string = '';
+  var i2: string = '';
+  import levenshtein from 'damerau-levenshtein';
+  $: sim = levenshtein(i1, i2).similarity*100;
+  import Menu from './Menu.svelte'
 </script>
 <Menu active="0" />
 <br><br>
@@ -21,15 +21,15 @@
 <br />
 <div>Hasonlóság: {sim.toFixed()}%</div>
 <style lang="scss">
-	:global(html), :global(body) {
-		margin: 0; 
-		height: 100%; 
-		overflow: hidden;
-		user-select: none;
-		-webkit-user-select: none;
-  	}
-	$resc: rgb(55, 71, 109);
-	div {
-		color: $resc;
-	}
+  :global(html), :global(body) {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  $resc: rgb(55, 71, 109);
+  div {
+    color: $resc;
+  }
 </style>

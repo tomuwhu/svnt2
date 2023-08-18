@@ -27,6 +27,13 @@
 </body>
 
 <style>
+  :global(html), :global(body) {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
   div {
       display: inline-block;
       width: 190px;
