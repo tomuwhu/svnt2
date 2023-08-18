@@ -52,7 +52,7 @@ function handleDragEnd(e) {
   e.target.style.backgroundColor = objects[e.target.id.slice(1)].color
 }
 </script>
-
+<title>Malom</title>
 <h1>Malom</h1>
 <svg id="mt" viewBox="0 0 120 120">
   {#each d as p}

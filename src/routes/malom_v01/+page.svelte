@@ -11,7 +11,7 @@ var d = [
   [95,95,[13,19]],[10,110,[9,22]],[60,110,[19,21,23]],[110,110,[14,22]]
 ].map(v => ({x: v[0], y:v[1], b: "white", nl: v[2]}))
 </script>
-
+<title>Malom tábla</title>
 <h1>Malom</h1>
 <svg id="mt" viewBox="0 0 120 120">
   {#each d as p, i}

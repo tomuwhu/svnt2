@@ -3,6 +3,7 @@
 </script>
 
 <body>
+  <title>Animáció</title>
   <div>X:</div>
   <div><input 
       type="range" 

@@ -13,6 +13,7 @@
     })
   }
 </script>
+<title>Malom játék</title>
 <svelte:window bind:innerWidth />
 {#if render==true}
 <Malom ad="Malom - {counter}. játszma"/>
