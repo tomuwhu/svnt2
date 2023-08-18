@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-
+import Menu from './../Menu.svelte'
 var r = 3.1
 var d = [
   [10,10,[1, 9]],[60,10,[0,2,4]],[110,10,[1,14]],[25,25,[4,10]],
@@ -12,6 +12,9 @@ var d = [
 ].map(v => ({x: v[0], y:v[1], b: "white", nl: v[2]}))
 </script>
 <title>Malom tábla</title>
+<Menu active="3" />
+<br>
+<br>
 <h1>Malom</h1>
 <svg id="mt" viewBox="0 0 120 120">
   {#each d as p, i}

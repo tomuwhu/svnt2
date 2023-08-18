@@ -1,9 +1,12 @@
 <script>
   var x = 40, y = 100
+  import Menu from './../Menu.svelte'
 </script>
-
+<title>Animáció</title>
 <body>
-  <title>Animáció</title>
+  <Menu  active="1" />
+  <br>
+  <br>
   <div>X:</div>
   <div><input 
       type="range" 
@@ -19,7 +22,7 @@
   <div>{y}</div><hr>
   <div    
       id="x2" 
-      style={`top: ${5*y+100}px; left: ${10*x+20}px;`}
+      style={`top: ${4*y+150}px; left: ${10*x+20}px;`}
   ></div>
 </body>
 

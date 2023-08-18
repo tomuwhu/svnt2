@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-
+  import Menu from './../Menu.svelte'
   export let ad = "Malom"
   var r = 3.1
   var d = [
@@ -52,7 +52,9 @@
     e.target.style.backgroundColor = objects[e.target.id.slice(1)].color
   }
 </script>
-
+<Menu active="5" />
+<br>
+<br>
 <h1>{ad}</h1>
 <svg id="mt" viewBox="0 0 120 140" bind:this={svg}>
   {#each d as p}

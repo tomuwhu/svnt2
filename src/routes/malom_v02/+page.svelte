@@ -1,5 +1,6 @@
 <script>
 // @ts-nocheck
+import Menu from './../Menu.svelte'
 var r = 3.1
 var d = [
   { x: 10,  y: 10,  b: "white", nl: [1, 9] }, 
@@ -53,6 +54,9 @@ function handleDragEnd(e) {
 }
 </script>
 <title>Malom</title>
+<Menu active="4" />
+<br>
+<br>
 <h1>Malom</h1>
 <svg id="mt" viewBox="0 0 120 120">
   {#each d as p}

@@ -1,5 +1,7 @@
 <script>
 // @ts-nocheck
+import Menu from './../Menu.svelte'
+
 let objects = Array(7).fill(null).map((v,i) => ({ el: null, id: i }))
 
 let dropped = [];
@@ -22,6 +24,7 @@ function handleDragEnd(e) {
 }
 </script>
 <title>Drag & Drop</title>
+<Menu active="2" />
 <h1>Drop Zone</h1>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
