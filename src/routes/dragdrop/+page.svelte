@@ -25,7 +25,7 @@ function handleDragEnd(e) {
 </script>
 <title>Drag & Drop</title>
 <Menu active="2" />
-<h1>Drop Zone</h1>
+<h1>Drop Zóna</h1>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div 
