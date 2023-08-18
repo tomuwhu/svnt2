@@ -21,7 +21,7 @@
     padding-top: 0px;
     color: white;
   }
-    a {
+  a {
     text-decoration: none;
     padding-left: 8px;
     padding-right: 8px;
