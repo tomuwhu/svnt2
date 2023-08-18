@@ -14,9 +14,11 @@
 	{#each items as p, i}<a class="x{i} {active == i.toString() ? "a" : ""}" href={p[0]}>{p[1]}</a>{/each}
 </div>
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap');
 	div {
 		background-color: black;
-		padding: 3px;
+		padding-bottom: 1px;
+		padding-top: 0px;
 		color: white;
 	}
     a {
@@ -25,6 +27,8 @@
 		padding-right: 8px;
 		color: rgb(240, 237, 195);
 		border-left: solid 1px white;
+		font-size: 11px;
+		font-family: 'Bricolage Grotesque', sans-serif;
 	}
 	a.x0 {
 		border: none;
