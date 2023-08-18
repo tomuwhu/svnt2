@@ -2,7 +2,7 @@
 	var i1: string = '';
 	var i2: string = '';
 	import levenshtein from 'damerau-levenshtein';
-	$: sim = levenshtein(i1, i2).similarity.toFixed(2);
+	$: sim = levenshtein(i1, i2).similarity*100;
 </script>
 <title>Hasonlóság</title>
 <h1>Két szöveg hasonlósága</h1>
@@ -16,7 +16,7 @@
   bind:value={i2} 
   placeholder="másik szöveg"/>
 <br />
-<div>Hasonlóság: {sim}</div>
+<div>Hasonlóság: {sim.toFixed()}%</div>
 <br><br>
 <div>
 	<a href="animation" target="animation">Animáció</a>
