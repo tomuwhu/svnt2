@@ -54,7 +54,7 @@ function handleDragEnd(e) {
 }
 </script>
 <title>Malom</title>
-<Menu active="4" />
+<Menu active="5" />
 <br>
 <br>
 <h1>Malom</h1>
@@ -90,13 +90,6 @@ function handleDragEnd(e) {
 {/each}
 
 <style lang="scss">
-  :global(html), :global(body) {
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-  }
 #mt {
     margin: auto;
     width: 600px;

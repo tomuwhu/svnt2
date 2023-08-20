@@ -12,7 +12,7 @@ var d = [
 ].map(v => ({x: v[0], y:v[1], b: "white", nl: v[2]}))
 </script>
 <title>Malom tábla</title>
-<Menu active="3" />
+<Menu active="4" />
 <br>
 <br>
 <h1>Malom</h1>
@@ -31,13 +31,6 @@ var d = [
 </svg>
 
 <style lang="scss">
-  :global(html), :global(body) {
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-  }
 #mt {
     margin: auto;
     width: 600px;

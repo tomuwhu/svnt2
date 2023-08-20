@@ -52,7 +52,7 @@
     e.target.style.backgroundColor = objects[e.target.id.slice(1)].color
   }
 </script>
-<Menu active="5" />
+<Menu active="6" />
 <br>
 <br>
 <h1>{ad}</h1>

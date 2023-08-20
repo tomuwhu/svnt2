@@ -53,14 +53,6 @@ function handleDragEnd(e) {
 {/each}
 
 <style>
-  
-  :global(html), :global(body) {
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-  }
 
   #drop_zone {
     background-color: #e1e7ac;

@@ -21,13 +21,6 @@
 <br />
 <div>Hasonlóság: {sim.toFixed()}%</div>
 <style lang="scss">
-  :global(html), :global(body) {
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-  }
   $resc: rgb(55, 71, 109);
   div {
     color: $resc;

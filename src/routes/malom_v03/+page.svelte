@@ -22,13 +22,6 @@
 <button on:click={start}>Új játszma</button>
 
 <style>
-  :global(html), :global(body) {
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-  }
   button {
     cursor: pointer;
   }
