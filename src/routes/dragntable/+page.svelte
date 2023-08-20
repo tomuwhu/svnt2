@@ -3,7 +3,7 @@
 import Menu from '../Menu.svelte'
 var c = {x: 0, id:""}
 </script>
-<title>Drag & Drop</title>
+<title>Számjáték</title>
 <Menu active="3" />
 <h1>Táblázat + Drag & Drop</h1>
 <table>
